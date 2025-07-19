@@ -39,3 +39,65 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#RUBY ON RAILS
+
+# Diretórios e arquivos do bundler
+/.bundle/
+/vendor/bundle
+
+# Cache do Rails
+/tmp
+/log
+/storage
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+
+# Arquivos de ambiente
+.env
+.env.* 
+!.env.example
+
+# Arquivos de banco de dados local
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/db/schema.rb
+/db/structure.sql
+
+# Arquivos de teste
+/coverage/
+/spec/examples.txt
+
+# Arquivos do editor
+*.swp
+*.swo
+*.DS_Store
+.idea/
+/.vscode/
+/*.iml
+
+# Arquivos do sistema operacional
+*.bak
+*.tmp
+*.log
+
+# Arquivos do Spring e PID
+/tmp/pids
+/tmp/caching-dev.txt
+
+# Arquivos do sistema de build (Webpacker / jsbundling-rails)
+.byebug_history
+/node_modules
+/lib/jvm
+
+# Arquivos do Capybara
+capybara-*.html
+
+# ActiveStorage local
+/storage
+
+# Arquivos de pré-compilação do frontend (caso use js/css bundling)
+app/assets/builds
