@@ -7,23 +7,29 @@ export default function Home() {
   const [input, setInput] = useState("");
   const [analysis, setAnalysis] = useState(null);
 
-  const handleAnalyze = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/analyze", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ input }),
-      });
+const handleAnalyze = async () => {
+  try {
+    console.log("[DEBUG] Iniciando análise...");
+    console.log("[DEBUG] Entrada digitada:", input);
 
-      const result = await response.json();
-      setAnalysis(result);
-    } catch (error) {
-      console.error("Erro ao analisar:", error);
-      alert("Erro ao se comunicar com o servidor");
-    }
-  };
+    const response = await fetch("http://localhost:3000/analyze", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ input }),
+    });
+
+    const result = await response.json();
+
+    console.log("[DEBUG] Resposta recebida da API:", result);
+    setAnalysis(result);
+    
+  } catch (error) {
+    console.error("[ERRO] Falha na análise:", error);
+    alert("Erro ao se comunicar com o servidor");
+  }
+};
 
   const handleClear = () => {
     setInput("");
