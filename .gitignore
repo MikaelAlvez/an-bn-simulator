@@ -101,3 +101,23 @@ capybara-*.html
 
 # Arquivos de pré-compilação do frontend (caso use js/css bundling)
 app/assets/builds
+
+# Ignorar banco local
+/back-end/storage/*.sqlite3
+
+# Ignorar cache do bootsnap
+/back-end/tmp/cache/bootsnap/
+
+# Ignorar outros temporários
+/back-end/tmp/*
+/back-end/storage/*.sqlite3
+/back-end/tmp/cache/bootsnap/
+/back-end/tmp/*
+
+# Para o Next.js
+/front-end/.next/
+
+# Para dependências do Node.js
+/front-end/node_modules/
+/front-end/.next/
+/front-end/node_modules/
