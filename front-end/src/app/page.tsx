@@ -6,9 +6,24 @@ import { Play, RotateCcw } from 'lucide-react';
 export default function Home() {
   const [input, setInput] = useState('');
 
-  const handleAnalyze = () => {
+const handleAnalyze = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/analyze', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ input }),
+    });
 
-  };
+    const result = await response.json();
+    alert(result.message);
+  } catch (error) {
+    console.error('Erro ao analisar:', error);
+    alert('Erro ao se comunicar com o servidor');
+  }
+};
+
 
   const handleClear = () => {
     setInput('');
